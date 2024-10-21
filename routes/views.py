@@ -48,7 +48,7 @@ def importTruckStop(request):
                 for a in row[2:-4]:
                     addressFull += a
     
-                url = f"https://maps.googleapis.com/maps/api/geocode/json?address={addressFull}&&key={GOOGLE_MAP_API_KEY}"
+                url = f"https://maps.googleapis.com/maps/api/geocode/json?address={addressFull}&&key={os.getenv('GOOGLE_MAP_API_KEY')}"
     
                 response = requests.get(url).json()
                 
@@ -123,13 +123,13 @@ def __getFuelStops(steps):
                             "latitude": stop_location['latLng']['latitude'],
                             "longitude": stop_location['latLng']['longitude']
                         },
-                        "radius": 10000.0
+                        "radius": 20000.0
                     }
                 }
             })
             
             response = requests.post(NEARBY_URL, data=nearbyRequest, headers=NEARBY_HEADERS)
-                        
+
             if (response.status_code == requests.codes.ok):
                 fuelStops = response.json()['places']
                          
