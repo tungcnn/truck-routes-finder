@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual Environment
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+*.log
+
+# Pytest
+.cache
+*.cover
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+*.egg-info/
+.dist-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+*.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
